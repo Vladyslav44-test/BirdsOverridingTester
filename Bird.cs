@@ -16,4 +16,30 @@ namespace BirdsOverridingTester
             return new Egg[0];
         }
     }
+
+    class Pigeon : Bird
+    {
+        public override Egg[] LayEggs(int numberOfEggs)
+        {
+            Egg[] eggs = new Egg[numberOfEggs];
+            for (int i = 0; i < numberOfEggs; i++)
+            {
+                eggs[i] = new Egg(Randomizer.NextDouble() * 2 + 1, "white");
+            }
+            return eggs;
+        }
+    }
+
+    class Ostrich : Bird
+    {
+        public override Egg[] LayEggs(int numberOfEggs)
+        {
+            Egg[] eggs = new Egg[numberOfEggs];
+            for (int i = 0; i < numberOfEggs; i++)
+            {
+                eggs[i] = new Egg(Randomizer.NextDouble() + 12, "speckled");
+            }
+            return eggs;
+        }
+    }
 }
